@@ -15,6 +15,16 @@ use App\Post;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/halo', 'latihanController@Halo');
+
+Route::get('/+/{angka?}/{angka1?}', 'latihanController@Pertambahan');
+Route::get('/-/{angka?}/{angka1?}', 'latihanController@Pengurangan');
+Route::get('/:/{angka?}/{angka1?}', 'latihanController@Pembagian');
+Route::get('/x/{angka?}/{angka1?}', 'latihanController@Perkalian');
+
+Route::get('/loop', 'latihanController@loop');
+
+
 // Route::get('/testmodel', function () {
 //     $query = App\Post::all();
 //     return $query;
