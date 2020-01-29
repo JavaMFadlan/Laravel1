@@ -114,7 +114,7 @@ if($a == NULL && $b == NULL){
     }
 public function gaji()
     {
-        $data = [['Nama' => 'Hari','Agama' => 'Muslim','Alamat' => 'Bandung','Jk' => 'L','Jabatan'=> 'Manager','Jam_kerja' => 200 ],
+        $data = [['Nama' => 'Hari','Agama' => 'Muslim','Alamat' => 'Bandung','Jk' => 'L','Jabatan'=> 'Manager','Jam_kerja' => 250 ],
         ['Nama' => 'Hakuna','Agama' => 'Muslim','Alamat' => 'Bandung','Jk' => 'P','Jabatan'=> 'sekretaris','Jam_kerja' => 200 ],
         ['Nama' => 'Hana','Agama' => 'Muslim','Alamat' => 'Bandung','Jk' => 'P','Jabatan'=> 'staff','Jam_kerja' => 200 ]
                 
@@ -122,7 +122,6 @@ public function gaji()
         ];
         $t = 0;
         foreach ($data as $key => $value) {
-            // echo 'Nama : ' . $value["Nama"].'<hr>';
             if ($value["Jabatan"] == 'Manager') {
                 $jabatan = $value['Jabatan'];
                 $gajinya= '5 JT';
@@ -131,57 +130,60 @@ public function gaji()
                 $PPN = 0.025; 
                 if ($value["Jam_kerja"] >=250) {    
                     $gajitotal = $gajiumum - ($gajiumum*$PPN);
-                    $bonus1 = $gajiumum + ($gajiumum * 10/100);
+                    $bonus1 = $gajiumum * 10/100;
                     $bonus = '10%';
                 }
                 elseif ($value["Jam_kerja"] >=200) {
                     $gajitotal = $gajiumum - ($gajiumum*$PPN);
-                    $bonus1 = $gajiumum + ($gajiumum * 5/100);
+                    $bonus1 = $gajiumum * 5/100;
                     $bonus = '5%';
                 }
             }
             else if ($value["Jabatan"] == 'sekretaris') {
                 $jabatan = $value['Jabatan'];
-                $gajinya= '5 JT';
+                $gajinya= '3,5 JT';
                 $PPN1 = '2,5%';
                 $gajiumum= 3500000;
                 $PPN = 0.025; 
                 if ($value["Jam_kerja"] >=250) {    
                     $gajitotal = $gajiumum - ($gajiumum*$PPN);
-                    $bonus1 = $gajiumum + ($gajiumum * 10/100);
+                    $bonus1 = $gajiumum * 10/100;
                     $bonus = '10%';
                 }
                 elseif ($value["Jam_kerja"] >=200) {
                     $gajitotal = $gajiumum - ($gajiumum*$PPN);
-                    $bonus1 = $gajiumum + ($gajiumum * 5/100);
+                    $bonus1 = $gajiumum * 5/100;
                     $bonus = '5%';
                 }
             }
             else if ($value["Jabatan"] == 'staff') {
                 $jabatan = $value['Jabatan'];
-                $gajinya= '5 JT';
+                $gajinya= '2,5 JT';
                 $PPN1 = '2,5%';
                 $gajiumum= 2500000;
                 $PPN = 0.025; 
                 if ($value["Jam_kerja"] >=250) {    
                     $gajitotal = $gajiumum - ($gajiumum*$PPN);
-                    $bonus1 = $gajiumum + ($gajiumum * 10/100);
+                    $bonus1 = $gajiumum * 10/100;
                     $bonus = '10%';
                 }
                 elseif ($value["Jam_kerja"] >=200) {
                     $gajitotal = $gajiumum - ($gajiumum*$PPN);
-                    $bonus1 = $gajiumum + ($gajiumum * 5/100);
+                    $bonus1 = $gajiumum * 5/100;
                     $bonus = '5%';
                 }
             }
-            echo 'Nama : '.$value['Nama'].
-                'Agama : '.$value['Agama'].
-                'Alamat : '.$value['Alamat'].
-                'Jenis Kelamin : '.$value['Jk'].
-                'Jabatan : '.$value['Jabatan'].
-                'Jam Kerja : '.$value['Jam_kerja'].
-                'Gaji Bersih : '.$gajinya.
-                '' ;
+            echo'Nama : '.$value['Nama'].
+                '<br>Agama : '.$value['Agama'].
+                '<br>Alamat : '.$value['Alamat'].
+                '<br>Jenis Kelamin : '.$value['Jk'].
+                '<br>Jabatan : '.$value['Jabatan'].
+                '<br>Jam Kerja : '.$value['Jam_kerja'].
+                '<br>Gaji Bersih : '.$gajinya.
+                '<br>Bonus : '.$bonus.
+                '<br>PPN : '.$PPN1.
+                '<br>Gaji Bonus : RP. '.number_format($bonus1,0,",",".").
+                '<br>Gaji Total : RP. '.number_format($gajitotal,0,",",".").'<hr>' ;
     }
 }
     /**

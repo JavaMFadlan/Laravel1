@@ -23,6 +23,18 @@ Route::get('/:/{angka?}/{angka1?}', 'latihanController@Pembagian');
 Route::get('/x/{angka?}/{angka1?}', 'latihanController@Perkalian');
 
 Route::get('/loop', 'latihanController@loop');
+Route::get('/gaji', 'latihanController@gaji');
+
+Route::get('/tabungan', 'tabunganController@Index');
+Route::get('/tabungan/{id}', 'tabunganController@show');
+Route::get('/tambah/{a?}/{b?}/{c?}/{d?}', 'tabunganController@Store');
+Route::get('/edit/{id?}/{a?}/{b?}/{c?}/{d?}', 'tabunganController@Update');
+Route::get('/delete/{id?}', 'tabunganController@Destroy');
+
+
+Route::get('/customer/tambah', 'tabunganController@Destroy');
+
+
 
 
 // Route::get('/testmodel', function () {
