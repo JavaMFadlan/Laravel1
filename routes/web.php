@@ -32,7 +32,15 @@ Route::get('/edit/{id?}/{a?}/{b?}/{c?}/{d?}', 'tabunganController@Update');
 Route::get('/delete/{id?}', 'tabunganController@Destroy');
 
 
-Route::get('/customer/tambah', 'tabunganController@Destroy');
+Route::get('/customer/tambah/{a?}/{b?}/{c?}/{d?}/{e?}/{f?}/{g?}', 'customerController@store');
+Route::get('/customer/index', 'customerController@index');
+Route::get('/customer/show/{id}', 'customerController@show');
+Route::get('/customer/edit/{id}/{a?}/{b?}/{c?}/{d?}/{e?}/{f?}/{g?}', 'customerController@update');
+Route::get('/customer/delete/{id}', 'customerController@destroy');
+
+Route::get('/latihan', 'PracticeController@Passing');
+Route::get('/latihan1', 'PracticeController@Passing2');
+Route::get('/latihan2', 'PracticeController@Passing3');
 
 
 
